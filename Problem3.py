@@ -3,16 +3,16 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?
 """
 
-def primes(num):
-  prime = num
-  prime_set = []
-  i = 2
-  while i < prime:
-    if prime%i == 0:
-      prime_set.append(i)
-      prime = prime/i
-      i=2
-    else:
-      i+=1
-  prime_set.append(prime)
-  print prime_set[-1]
+def factorize(n):
+	l = []
+	while n > 1:
+		i = 2
+		while i <= n:
+			if n%i == 0:
+				n = n/i
+				l.append(i)
+			else:
+				i+=1
+	return l[-1]
+
+#could be improved - we only need the last element, this however gets a list of all of them
